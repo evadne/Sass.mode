@@ -644,7 +644,10 @@
 			</keywords>
 
 			<keywords id="Colors" color="#760f15" font-style="normal" useforautocomplete="no">
-				<regex>(#[\da-fA-F]{3,6})</regex>
+
+				<regex>(?i)(\#[\da-f]{3})</regex>
+				<regex>(?i)(\#[\da-f]{6})</regex>
+										
 			</keywords>
 			
 			<keywords id="Control Directives" font-style="normal" font-weight="bold" color="#3A1D72">
