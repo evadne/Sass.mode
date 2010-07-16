@@ -640,7 +640,7 @@
 			</state>
 
 			<keywords id="Digits" color="#00f" font-style="normal" useforautocomplete="yes">
-				<regex>(?:\s|\(|-|\.)([\d]+(?:px|pt|em|ex|cm|in|mm|pc|%)?)</regex>
+				<regex>(?&lt;![#\d\w])((?:(?:-?\.\d+)|(?:-?\d+\.\d+)|(?:-?\d+))(?:s|px|pt|em|ex|cm|in|mm|pc|%)?)</regex>
 			</keywords>
 
 			<keywords id="Colors" color="#760f15" font-style="normal" useforautocomplete="no">
