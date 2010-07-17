@@ -2,13 +2,161 @@
 <!DOCTYPE syntax SYSTEM "symbol.dtd">
 <symbols>
 
-    <!-- STUDIO -->
-    <symbol id="Pragma marks" font-weight="normal" font-style="normal" image="SymbolMark" indentation="0" ignoreblocks="no" show-in-comments="yes">
-        <regex>/\* !(.+) \*/</regex>
-    </symbol>
 
-    <symbol id="Import" font-weight="normal" font-style="normal" image="Symbol-Import" indentation="0" ignoreblocks="no" show-in-comments="yes">
-        <regex>(\@import)</regex>
-    </symbol>
 
+
+
+	<blocks>
+
+		<beginregex>{</beginregex>
+		<endregex>}</endregex>
+
+	</blocks>
+
+
+
+
+
+	<symbol id="Variables" image="SymbolV">
+
+		<regex>(?&lt;=[\n\r]|^)([\t ]*\$[\w\-]+\b):</regex>
+		
+		<postprocess>
+
+			<find>[ \t]</find>
+			<replace>  </replace>	
+			<find>\$</find>
+			<replace></replace>
+			<find>:</find>
+			<replace></replace>
+	
+		</postprocess>
+
+	</symbol>
+
+
+
+
+
+	<symbol id="Tags" image="SymbolT">
+
+		<regex>(?&lt;=[\n\r]|^)([\t ]*[\w\*][\w\d\s,\-_\*>:\(\)\+\[\]="~\$\^#\. ]*)(?=(\s*\{)|(\s*/\*.*\*/\s*\{))</regex>
+
+		<postprocess>
+	
+			<find>[\n\r](\s|\t)+</find>
+			<replace> </replace>
+			<find>[ \t]</find>
+			<replace>  </replace>
+			<find>/\*.*\*/</find>
+			<replace></replace>
+	
+		</postprocess>
+
+	</symbol>
+
+
+
+
+
+	<symbol id="Mixins" image="SymbolC">
+	
+		<regex>(?&lt;=[\n\r]|^)([\t ]*@mixin[\w\d\s,\-_\*>:\(\)\+\[\]="~\$\^#\. ]*)(?=(\s*\{)|(\s*/\*.*\*/\s*\{)|(\s*\(.+\)\s*\{))</regex>
+		
+		<postprocess>
+
+			<find>[\n\r](\s|\t)+</find>
+			<replace> </replace>
+			<find>[ \t]</find>
+			<replace>  </replace>
+			<find>/\*.*\*/</find>
+			<replace></replace>
+
+		</postprocess>
+	
+	</symbol>
+	
+	
+	
+	
+	
+	<symbol id="Classes" image="SymbolC">
+	
+		<regex>(?&lt;=[\n\r]|^)([\t ]*\.[\w\d\s,\-_\*>:\(\)\+\[\]="~\$\^#\. ]*)(?=(\s*\{)|(\s*/\*.*\*/\s*\{)|(\s*\(.+\)\s*\{))</regex>
+		
+		<postprocess>
+
+			<find>[\n\r](\s|\t)+</find>
+			<replace> </replace>
+			<find>[ \t]</find>
+			<replace>  </replace>
+			<find>/\*.*\*/</find>
+			<replace></replace>
+
+		</postprocess>
+	
+	</symbol>
+
+
+
+
+    
+	<symbol id="PseudoElements" image="SymbolPseudo">
+	
+		<regex>(?&lt;=[\n\r]|^)([\t ]*&amp;:[\w\d\s,\-_\*>:\(\)\+\[\]="~\$\^#\. ]*)(?=(\s*\{)|(\s*/\*.*\*/\s*\{)|(\s*\(.+\)\s*\{))</regex>
+		
+		<postprocess>
+
+			<find>[\n\r](\s|\t)+</find>
+			<replace> </replace>
+			<find>[ \t]</find>
+			<replace>  </replace>
+			<find>&amp;</find>
+			<replace></replace>
+			<find>/\*.*\*/</find>
+			<replace></replace>
+
+		</postprocess>
+	
+	</symbol>
+	
+	
+	
+	
+	
+	<symbol id="IDs" image="SymbolID">
+
+		<regex>(?&lt;=[\n\r]|^)[\t ]*(#[\w\d\s,\-_\*>:\(\)\+\[\]="~\$\^#\. ]*)(?=(\s*\{)|(\s*/\*.*\*/\s*\{))</regex>
+
+		<postprocess>
+	
+			<find>[\n\r](\s|\t)+</find>
+			<replace> </replace>
+			<find>[ \t]</find>
+			<replace>  </replace>
+			<find>/\*.*\*/</find>
+			<replace></replace>
+	
+		</postprocess>
+
+	</symbol>
+
+
+
+
+
+	<symbol id="Pragma marks" font-weight="normal" font-style="normal" image="SymbolMark" indentation="0" ignoreblocks="no" show-in-comments="yes">
+
+		<regex>^/[/\*]\s+!([^\n]+)$</regex>
+
+	</symbol>
+
+
+
+
+	
 </symbols>
+
+
+
+
